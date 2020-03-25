@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
     
-public class SwiftInstallPlugin: NSObject, FlutterPlugin {
+public class SwiftInstallApkPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "install_plugin", binaryMessenger: registrar.messenger())
-    let instance = SwiftInstallPlugin()
+    let instance = SwiftInstallApkPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

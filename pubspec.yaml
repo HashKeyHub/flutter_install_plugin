@@ -16,7 +16,7 @@ dependencies:
 flutter:
   plugin:
     androidPackage: com.zaihui.installplugin
-    pluginClass: InstallPlugin
+    pluginClass: InstallApkPlugin
 
 dev_dependencies:
   flutter_test:

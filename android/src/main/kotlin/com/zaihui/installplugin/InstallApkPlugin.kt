@@ -22,7 +22,7 @@ import java.io.FileNotFoundException
  * @property registrar Registrar
  * @constructor
  */
-class InstallPlugin(private val registrar: Registrar) : MethodCallHandler {
+class InstallApkPlugin(private val registrar: Registrar) : MethodCallHandler {
     private var apkFile: File? = null
     private var appId: String? = null
 
@@ -32,7 +32,7 @@ class InstallPlugin(private val registrar: Registrar) : MethodCallHandler {
         @JvmStatic
         fun registerWith(registrar: Registrar): Unit { 
             val channel = MethodChannel(registrar.messenger(), "install_plugin")
-            val installPlugin = InstallPlugin(registrar)
+            val installPlugin = InstallApkPlugin(registrar)
             channel.setMethodCallHandler(installPlugin)
             registrar.addActivityResultListener { requestCode, resultCode, intent ->
                 Log.d(
