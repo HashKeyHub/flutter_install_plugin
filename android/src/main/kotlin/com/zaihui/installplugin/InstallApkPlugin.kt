@@ -77,12 +77,7 @@ class InstallApkPlugin(private val registrar: Registrar) : MethodCallHandler {
         val file = File(filePath)
         if (!file.exists()) throw FileNotFoundException("$filePath is not exist! or check permission")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            if (canRequestPackageInstalls(activity)) install24(activity, file, appId)
-            else {
-                showSettingPackageInstall(activity)
-                this.apkFile = file
-                this.appId = appId
-            }
+            install24(activity, file, appId)
         } else {
             installBelow24(activity, file)
         }
